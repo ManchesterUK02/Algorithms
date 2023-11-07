@@ -57,8 +57,11 @@ if __name__ == "__main__":
     x = int(input("Enter the row number for the initial position of the first queen: "))
     y = int(input("Enter the column number for the initial position of the first queen: "))
 
-    NQBt = NQBacktracking(x, y)
-    NQBt.solveNQ()
+    if x == 0 or y == 0:
+        print("Invalid initial position. Row and column indices must be greater than or equal to 1.")
+    else:
+        NQBt = NQBacktracking(x, y)
+        NQBt.solveNQ()
 
 """
 The **N-Queens problem** is a classic combinatorial problem involving placing N queens on an NxN chessboard in a manner that no two queens can attack each other. The challenge is to determine all the distinct configurations of placing the queens.
