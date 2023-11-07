@@ -49,3 +49,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# weights = 1 3 5 4 1 3 2
+# values = 5 10 15 7 8 9 4
+# capacity = 15
