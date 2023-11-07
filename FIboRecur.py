@@ -1,4 +1,4 @@
-import time
+import timeit
 
 def fibonacci_recursive(n):
     if n <= 0:
@@ -14,10 +14,12 @@ def fibonacci_recursive(n):
 
 n = int(input("Enter the number of terms in the Fibonacci sequence: "))
 
-start_time = time.time()
+RUNS = 1000
 fibonacci_sequence = fibonacci_recursive(n)
-end_time = time.time()
+
 
 print("Fibonacci sequence (recursive):", fibonacci_sequence)
-print("Total time taken (recursive):", end_time - start_time, "seconds")
+recursive_time = timeit.timeit(lambda: fibonacci_recursive(n), number=RUNS)
+print("Total time taken (recursive):", recursive_time, "seconds")
+print("Time Complexity: O(2^n)\n" "Space Complexity: O(n)\n")
 
