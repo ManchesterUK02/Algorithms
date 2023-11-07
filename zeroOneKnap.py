@@ -28,3 +28,6 @@ def main():
 if __name__ == "__main__":
     main()
 
+# weights = 3 4 6 5 
+# values = 2 3 1 4
+# capacity = 8
