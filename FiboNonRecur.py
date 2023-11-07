@@ -1,10 +1,14 @@
 import timeit
 
 def fibonacci_non_recursive(n):
-    fib_sequence = [0, 1]
-    for i in range(2, n):
-        fib_sequence.append(fib_sequence[i - 1] + fib_sequence[i - 2])
-    return fib_sequence
+    a, b = 0, 1
+    fibonacci_sequence = []
+    for i in range(n):
+        fibonacci_sequence.append(a)
+        c = a + b
+        a = b
+        b = c
+    return fibonacci_sequence
 
 n = int(input("Enter the number of terms in the Fibonacci sequence: "))
 
