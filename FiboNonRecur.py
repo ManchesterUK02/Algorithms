@@ -1,4 +1,4 @@
-import time
+import timeit
 
 def fibonacci_non_recursive(n):
     fib_sequence = [0, 1]
@@ -8,10 +8,11 @@ def fibonacci_non_recursive(n):
 
 n = int(input("Enter the number of terms in the Fibonacci sequence: "))
 
-start_time = time.time()
+RUNS = 1000
 fibonacci_sequence = fibonacci_non_recursive(n)
-end_time = time.time()
+
 
 print("Fibonacci sequence (non-recursive):", fibonacci_sequence)
-print("Total time taken (non-recursive):", end_time - start_time, "seconds")
-
+non_recursive_time = timeit.timeit(lambda: fibonacci_non_recursive(n), number=RUNS)
+print("Total time taken (non-recursive):", non_recursive_time, "seconds")
+print("Time Complexity: O(n)\n" "Space Complexity: O(1)\n")
